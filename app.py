@@ -9,7 +9,7 @@ import os
 app = FastAPI()
 
 # Initialize Groq client
-GROQ_API_KEY = "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"  # Replace with your Groq API key
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")  # Retrieve the key from environment variables
 client = Groq(api_key=GROQ_API_KEY)
 
 # Endpoint to upload dataset and process it
