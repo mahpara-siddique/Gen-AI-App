@@ -9,8 +9,13 @@ import os
 app = FastAPI()
 
 # Initialize Groq client
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")  # Retrieve the key from environment variables
+GROQ_API_KEY = "your_groq_api_key"  # Replace with your actual API key
 client = Groq(api_key=GROQ_API_KEY)
+
+# Root endpoint
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Gen-AI Water Resource Management App!"}
 
 # Endpoint to upload dataset and process it
 @app.post("/upload-dataset/")
@@ -50,4 +55,3 @@ async def analyze_data(serial_number: int):
         return {"analysis": chat_completion.choices[0].message.content}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error querying Groq API: {str(e)}")
-
