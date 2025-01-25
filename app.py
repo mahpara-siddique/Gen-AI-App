@@ -12,7 +12,7 @@ import os
 app = FastAPI()
 
 # Initialize Groq client
-GROQ_API_KEY = "your_groq_api_key"  # Replace with your actual API key
+GROQ_API_KEY = "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"  # Replace with your actual API key
 client = Groq(api_key=GROQ_API_KEY)
 
 # Temporary storage for datasets
