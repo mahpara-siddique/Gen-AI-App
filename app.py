@@ -9,8 +9,7 @@ import os
 app = FastAPI()
 
 # Set your Groq API key here
-GROQ_API_KEY = "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"
-client = Groq(api_key=GROQ_API_KEY)
+
 
 uploaded_dataset = None  # Global variable to hold the dataset
 
